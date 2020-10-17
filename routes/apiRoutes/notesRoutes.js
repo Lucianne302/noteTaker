@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { filterByQuery, findById, createNewNote, validateNote, } = require('../../lib/notes');
+const { filterByQuery, findById, createNewNote, validateNote, deleteNoteById, } = require('../../lib/notes');
 const { notes } = require('../../Develop/db/db.json');
 
 router.get('/notes', (req, res) => {
@@ -20,14 +20,10 @@ router.get('/notes/:id', (req, res) => {
   }
 });
 
-// console.log(note)
-// for (let i = 0, i <notes.length; i++) {
-//   if(chosen === notes.[i].routeName) {
-//     return res.json(notes[i]);
-//   }
-// }
-// return res.json(false);
-// });
+router.delete('/notes/:id',(req, res) => {
+  deleteNoteById(req.params.id, notes);
+  res.json(err).end();
+});
 
 router.post('/notes', (req, res) => {
   // set id based on what the next index of the array will be
