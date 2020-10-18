@@ -4,9 +4,8 @@ const { filterByQuery, findById, createNewNote, validateNote, deleteNoteById, } 
 const { notes } = require('../../Develop/db/db.json');
 
 router.get('/notes', (req, res) => {
-  let results = notes;
   if (req.query) {
-    results = filterByQuery(req.query, results);
+    results = filterByQuery(req.query, notes);
   }
   res.json(results);
 });
@@ -22,7 +21,7 @@ router.get('/notes/:id', (req, res) => {
 
 router.delete('/notes/:id',(req, res) => {
   deleteNoteById(req.params.id, notes);
-  res.json(err).end();
+  res.json().end();
 });
 
 router.post('/notes', (req, res) => {
@@ -32,8 +31,8 @@ router.post('/notes', (req, res) => {
   if (!validateNote(req.body)) {
     res.status(400).send("The note is not properly formatted.");
   } else {
-    const notes= createNewNote(req.body, notes);
-    res.json(notes);
+    const addNotes= createNewNote(req.body, notes);
+    res.json(addNotes);
   }
 });
 

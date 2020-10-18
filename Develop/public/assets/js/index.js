@@ -1,3 +1,5 @@
+//const notes = require('../../../../lib/notes');
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -69,7 +71,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-  saveNote(newNote).then(() => {
+  saveNote(newNote).then(function(data) {
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -168,15 +170,18 @@ const renderNoteList = async (notes) => {
 };
 
 // Gets notes from the db and renders them to the sidebar
-const getAndRenderNotes = () => getNotes().then(renderNoteList);
-  console.log('getAndRenderNotes' + JSON.stringify(data))
+const getAndRenderNotes = () => getNotes().then(function(data){
   renderNoteList(data);
+});
+//  console.log('getAndRenderNotes' + JSON.stringify(notes))
+//  renderNoteList(notes);
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
+//  document.getElementById("myNoteTitle").addEventListener('click', alert('test'));
 }
 
 getAndRenderNotes();

@@ -1,40 +1,24 @@
 {
-    "notes": [
-        {
-            "noteTitle": "note title",
-            "noteText": "note text",
-            "id": "0"
-        },
-        {
-            "noteTitle": "note title",
-            "noteText": "note text",
-            "id": "1"
-        },
-        {
-            "noteTitle": "note title",
-            "noteText": "note text",
-            "id": "2"
-        },
-        {
-            "noteTitle": "note title",
-            "noteText": "note text",
-            "id": "3"
-        },
-        {
-            "noteTitle": "note title",
-            "noteText": "note text",
-            "id": "4"
-        },
-        {
-            "noteTitle": "note title",
-            "noteText": "note text",
-            "id": "5"
-        },
-        {
-            "noteTitle": "note title",
-            "noteText": "note text",
-            "id": "6"
-        }
-
-    ]
+  "notes": [
+    {
+      "title": "adfvaef",
+      "text": "ssgs",
+      "id": "0"
+    },
+    {
+      "title": "kjlk",
+      "text": "kdfa",
+      "id": "1"
+    },
+    {
+      "title": "jyygi",
+      "text": "lkjl;",
+      "id": "2"
+    },
+    {
+      "title": "arfvaesf",
+      "text": "sfgbsfrhrr",
+      "id": "3"
+    }
+  ]
 }
